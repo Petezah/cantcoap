@@ -22,7 +22,11 @@
 #include <stdint.h>
 
 #ifndef _WIN32
+#ifdef ESP8266
+#include "lwip/def.h"
+#else
 #include <arpa/inet.h>  /* __BYTE_ORDER */
+#endif
 #endif
 
 #if !defined(__LITTLE_ENDIAN__) && !defined(__BIG_ENDIAN__)

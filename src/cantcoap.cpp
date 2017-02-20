@@ -38,7 +38,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <unistd.h>
 #include <string.h>
 #include "cantcoap.h"
+#ifdef ESP8266
+#include "lwip/def.h"
+#else
 #include "arpa/inet.h"
+#endif
 #include "sysdep.h"
 
 /// Memory-managed constructor. Buffer for PDU is dynamically sized and allocated by the object.
